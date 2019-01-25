@@ -43,7 +43,8 @@ class HomePage extends StatefulWidget {
     if (rebuild) {
       return (context.inheritFromWidgetOfExactType(_MyInheritedWidget) as _MyInheritedWidget).data;
     }
-    return (context.ancestorWidgetOfExactType(_MyInheritedWidget) as _MyInheritedWidget).data;
+    return (context.ancestorInheritedElementForWidgetOfExactType(_MyInheritedWidget).widget as _MyInheritedWidget).data;
+    //return (context.ancestorWidgetOfExactType(_MyInheritedWidget) as _MyInheritedWidget).data;
   }
 }
 
