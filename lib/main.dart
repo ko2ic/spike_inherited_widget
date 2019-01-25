@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(TopPage());
 
-class TopPage extends StatefulWidget {
-  @override
-  _TopPageState createState() => _TopPageState();
-}
-
-class _TopPageState extends State<TopPage> {
+class TopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,21 +25,6 @@ class _TopPageState extends State<TopPage> {
         ),
       ),
     );
-  }
-}
-
-class _MyInheritedWidget extends InheritedWidget {
-  _MyInheritedWidget({
-    Key key,
-    @required Widget child,
-    @required this.data,
-  }) : super(key: key, child: child);
-
-  final HomePageState data;
-
-  @override
-  bool updateShouldNotify(_MyInheritedWidget oldWidget) {
-    return true;
   }
 }
 
@@ -82,6 +62,21 @@ class HomePageState extends State<HomePage> {
       data: this,
       child: widget.child,
     );
+  }
+}
+
+class _MyInheritedWidget extends InheritedWidget {
+  _MyInheritedWidget({
+    Key key,
+    @required Widget child,
+    @required this.data,
+  }) : super(key: key, child: child);
+
+  final HomePageState data;
+
+  @override
+  bool updateShouldNotify(_MyInheritedWidget oldWidget) {
+    return true;
   }
 }
 
